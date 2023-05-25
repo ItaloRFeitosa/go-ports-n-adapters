@@ -1,0 +1,20 @@
+### get /ping
+GET http://localhost:8080/ping
+Content-Type: application/json
+
+### POST /todos
+POST http://localhost:8080/todos
+Content-Type: application/json
+
+{
+    "description": "some description"
+}
+
+
+### PATCH /todos/:id
+PATCH http://localhost:8080/todos/65116b3b-a2d0-45c8-b6c9-7656e7e1d49f
+Content-Type: application/json
+
+{
+    "newDescription": "new description"
+}
