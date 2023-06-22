@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/italorfeitosa/go-ports-n-adapters/internal/shared/uid"
+	"github.com/italorfeitosa/go-ports-n-adapters/pkg/uid"
 )
 
 type Task struct {

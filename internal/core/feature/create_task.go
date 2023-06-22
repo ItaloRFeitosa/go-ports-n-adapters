@@ -6,7 +6,7 @@ import (
 	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/model"
 	primaryport "github.com/italorfeitosa/go-ports-n-adapters/internal/port/primary"
 	secondaryport "github.com/italorfeitosa/go-ports-n-adapters/internal/port/secondary"
-	"github.com/italorfeitosa/go-ports-n-adapters/internal/shared/uid"
+	"github.com/italorfeitosa/go-ports-n-adapters/pkg/uid"
 )
 
 type CreateTaskFeature struct {

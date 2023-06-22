@@ -8,7 +8,7 @@ import (
 	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/model"
 	primaryport "github.com/italorfeitosa/go-ports-n-adapters/internal/port/primary"
 	"github.com/italorfeitosa/go-ports-n-adapters/internal/port/secondary/mocks"
-	"github.com/italorfeitosa/go-ports-n-adapters/internal/shared/uid"
+	"github.com/italorfeitosa/go-ports-n-adapters/pkg/uid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
