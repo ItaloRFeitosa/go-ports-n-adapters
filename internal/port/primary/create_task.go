@@ -1,9 +1,9 @@
 package primary
 
-type CreateTodoInput struct {
+type CreateTaskInput struct {
 	Description string `json:"description"`
 }
 
-type CreateTodoResult struct {
+type CreateTaskResult struct {
 	ID string `json:"id"`
 }
