@@ -3,6 +3,7 @@ module github.com/italorfeitosa/go-ports-n-adapters
 go 1.20
 
 require (
+	github.com/brianvoe/gofakeit/v6 v6.22.0
 	github.com/gin-gonic/gin v1.9.0
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.1

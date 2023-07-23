@@ -2,8 +2,8 @@
 GET http://localhost:8080/ping
 Content-Type: application/json
 
-### POST /todos
-POST http://localhost:8080/todos
+### POST /tasks
+POST http://localhost:8080/tasks
 Content-Type: application/json
 
 {
@@ -11,8 +11,8 @@ Content-Type: application/json
 }
 
 
-### PATCH /todos/:id
-PATCH http://localhost:8080/todos/65116b3b-a2d0-45c8-b6c9-7656e7e1d49f
+### GET /tasks/:id
+GET http://localhost:8080/tasks/588783ac-fac7-41d9-ba3b-959c7c097b3b
 Content-Type: application/json
 
 {
