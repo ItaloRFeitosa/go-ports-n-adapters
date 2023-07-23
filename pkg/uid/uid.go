@@ -21,7 +21,7 @@ func Random() UID {
 }
 
 func New(uidAsStr string) (UID, error) {
-	if Validate(uidAsStr) {
+	if !Validate(uidAsStr) {
 		return "", fmt.Errorf("can't parse, invalid uid string") // TODO: replace with value error or sentinel error
 	}
 
