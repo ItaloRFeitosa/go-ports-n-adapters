@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/brianvoe/gofakeit/v6"
+	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/entity"
 	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/feature"
-	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/model"
 	primaryport "github.com/italorfeitosa/go-ports-n-adapters/internal/port/primary"
 	"github.com/italorfeitosa/go-ports-n-adapters/internal/port/secondary/mocks"
 	"github.com/italorfeitosa/go-ports-n-adapters/pkg/uid"
@@ -22,7 +22,7 @@ type testCase struct {
 }
 
 func prepareTest(tc *testCase) {
-	tc.todoRepoMock.EXPECT().Insert(mock.MatchedBy(func(todo model.Task) bool {
+	tc.todoRepoMock.EXPECT().Insert(mock.MatchedBy(func(todo *entity.Task) bool {
 		return tc.input.Description == todo.Description &&
 			todo.ID.Valid() && todo.DoneAt == nil && !todo.CreatedAt.IsZero()
 	})).Return(tc.wantErr)

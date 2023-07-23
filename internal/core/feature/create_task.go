@@ -1,33 +1,28 @@
 package feature
 
 import (
-	"time"
-
-	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/model"
+	"github.com/italorfeitosa/go-ports-n-adapters/internal/core/entity"
 	primaryport "github.com/italorfeitosa/go-ports-n-adapters/internal/port/primary"
 	secondaryport "github.com/italorfeitosa/go-ports-n-adapters/internal/port/secondary"
-	"github.com/italorfeitosa/go-ports-n-adapters/pkg/uid"
 )
 
-type CreateTaskFeature struct {
-	taskRepo secondaryport.TaskRepository
+type createTaskFeature struct {
+	taskRepository secondaryport.TaskRepository
 }
 
-func NewCreateTaskFeature(todoRepo secondaryport.TaskRepository) *CreateTaskFeature {
-	return &CreateTaskFeature{todoRepo}
+func NewCreateTaskFeature(taskRepository secondaryport.TaskRepository) *createTaskFeature {
+	return &createTaskFeature{taskRepository}
 }
 
-func (f *CreateTaskFeature) CreateTask(input primaryport.CreateTaskInput) (primaryport.CreateTaskResult, error) {
-	var (
-		newTask model.Task
-		result  primaryport.CreateTaskResult
-	)
+func (f *createTaskFeature) CreateTask(input primaryport.CreateTaskInput) (primaryport.CreateTaskResult, error) {
+	var result primaryport.CreateTaskResult
 
-	newTask.ID = uid.Random()
-	newTask.Description = input.Description
-	newTask.CreatedAt = time.Now()
+	newTask, err := entity.CreateTask(input.Description)
+	if err != nil {
+		return result, err
+	}
 
-	if err := f.taskRepo.Insert(newTask); err != nil {
+	if err := f.taskRepository.Insert(newTask); err != nil {
 		return result, err
 	}
 
